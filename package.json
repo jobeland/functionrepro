@@ -1,0 +1,42 @@
+{
+  "name": "functionrepro",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "prestart": "npm run build",
+    "start": "func start",
+    "test": "npm run build & jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "libraries",
+    "functionapp1",
+    "functionapp2"
+  ],
+  "private": true,
+  "dependencies": {
+    "@types/jest": "^28.0.7",
+    "jest": "^28.0.7",
+    "ts-jest": "^28.0.7"
+  },
+  "jest": {
+    "testMatch": [
+      "**/__tests__/**/*.ts?(x)",
+      "**/?(*.)+(spec|test).ts?(x)"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "typescript": "^5.4.5"
+  }
+}

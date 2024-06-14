@@ -1,0 +1,37 @@
+{
+  "name": "libraries",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "prestart": "npm run build",
+    "start": "func start",
+    "test": "npm run build & jest"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@azure/functions": "^1.2.3",
+    "@types/jest": "^28.0.7",
+    "@types/node": "^20.12.12",
+    "jest": "^28.0.7",
+    "ts-jest": "^28.0.7",
+    "typescript": "^5.4.5"
+  },
+  "jest": {
+    "testMatch": [
+      "**/__tests__/**/*.ts?(x)",
+      "**/?(*.)+(spec|test).ts?(x)"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
